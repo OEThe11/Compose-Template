@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.daggerHilt)
+    id("com.google.devtools.ksp")
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,7 +43,8 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        //Make sure KSP, Kotlin Version and this compiler version ALL Match up!
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
         resources {
@@ -68,6 +71,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    //KSP
+    implementation(libs.kspProcessingApi)
+    implementation(libs.kspProcessing)
+
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converterMoshi)
@@ -78,7 +85,7 @@ dependencies {
 
     //Dagger - Hilt
     implementation(libs.hiltAndroid)
-    implementation(libs.hiltCompiler)
+    ksp(libs.hiltCompiler)
 
     //Coroutines Lifecycle Scopes
     implementation(libs.coroLifecycle)
@@ -87,4 +94,10 @@ dependencies {
     implementation(libs.composeNavi)
     implementation(libs.composeNaviHilt)
 
+    //Room
+    implementation(libs.roomDBRuntime)
+    implementation(libs.roomDB)
+    ksp(libs.roomCompiler)
 }
+
+

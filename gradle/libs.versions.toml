@@ -1,19 +1,21 @@
 [versions]
 agp = "8.4.0"
-kotlin = "1.9.0"
-coreKtx = "1.10.1"
+kotlin = "1.9.22"
+coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.6.1"
-activityCompose = "1.8.0"
-composeBom = "2023.08.00"
+lifecycleRuntimeKtx = "2.7.0"
+activityCompose = "1.9.0"
+composeBom = "2024.05.00"
 
 daggerHilt = "2.50"
 retrofit = "2.9.0"
 moshi = "1.15.0"
 navigation = "2.7.7"
 viewModel = "2.7.0"
+room = "2.6.1"
+ksp = "1.9.22-1.0.17"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,10 +52,21 @@ coroLifecycle = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx"
 composeNavi = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation"}
 composeNaviHilt = { group = "androidx.hilt", name = "hilt-navigation-compose", version = "1.2.0" }
 
+#Room DB
+roomDBRuntime = { group = "androidx.room", name = "room-runtime", version.ref = "room"}
+roomCompiler = { group = "androidx.room", name = "room-compiler", version.ref = "room"}
+roomDB = { group = "androidx.room", name = "room-ktx", version.ref = "room"}
+
+#KSP
+kspProcessingApi = { group = "com.google.devtools.ksp", name = "symbol-processing-api", version.ref = "ksp"}
+kspProcessing = { group = "com.google.devtools.ksp", name = "symbol-processing", version.ref = "ksp"}
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp"}
 
 
