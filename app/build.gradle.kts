@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.daggerHilt)
 }
 
 android {
@@ -66,4 +67,24 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converterMoshi)
+
+    //Moshi
+    implementation(libs.moshi)
+    implementation(libs.moshiKotlin)
+
+    //Dagger - Hilt
+    implementation(libs.hiltAndroid)
+    implementation(libs.hiltCompiler)
+
+    //Coroutines Lifecycle Scopes
+    implementation(libs.coroLifecycle)
+
+    //Compose Navigation
+    implementation(libs.composeNavi)
+    implementation(libs.composeNaviHilt)
+
 }

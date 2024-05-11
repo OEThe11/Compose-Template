@@ -9,6 +9,12 @@ lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
 composeBom = "2023.08.00"
 
+daggerHilt = "2.50"
+retrofit = "2.9.0"
+moshi = "1.15.0"
+navigation = "2.7.7"
+viewModel = "2.7.0"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -25,7 +31,29 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+# Retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converterMoshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+
+# Moshi
+moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshiKotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
+
+# Dagger Hilt
+hiltAndroid = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerHilt" }
+hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "daggerHilt" }
+
+#Coroutines Lifecycle Scopes
+coroLifecycle = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "viewModel" }
+
+#Compose Navigation
+composeNavi = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation"}
+composeNaviHilt = { group = "androidx.hilt", name = "hilt-navigation-compose", version = "1.2.0" }
+
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
+
 
