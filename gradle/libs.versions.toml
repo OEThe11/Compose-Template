@@ -4,6 +4,11 @@ kotlin = "1.9.22"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
+mockito = "4.0.0"
+arch = "2.2.0"
+kotlinx = "1.7.1"
+dht = "2.38.1"
+mockk = "1.12.0"
 espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.9.0"
@@ -32,6 +37,14 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+#Added Testing Dependancies
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito"}
+mockito-inline = { group = "org.mockito", name = "mockito-inline", version.ref = "mockito"}
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito"}
+androidx-arch = { group = "androidx.arch.core", name = "core-testing", version.ref = "arch"}
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx"}
+dagger-hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dht"}
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk"}
 
 # Retrofit
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
@@ -57,7 +70,7 @@ roomDBRuntime = { group = "androidx.room", name = "room-runtime", version.ref = 
 roomCompiler = { group = "androidx.room", name = "room-compiler", version.ref = "room"}
 roomDB = { group = "androidx.room", name = "room-ktx", version.ref = "room"}
 
-#KSP
+#KSP - A better alt than kapt
 kspProcessingApi = { group = "com.google.devtools.ksp", name = "symbol-processing-api", version.ref = "ksp"}
 kspProcessing = { group = "com.google.devtools.ksp", name = "symbol-processing", version.ref = "ksp"}
 
@@ -66,6 +79,8 @@ kspProcessing = { group = "com.google.devtools.ksp", name = "symbol-processing",
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+#New Plugins
 daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp"}
 

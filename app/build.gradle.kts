@@ -2,8 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.daggerHilt)
-    id("com.google.devtools.ksp")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp") // A better tool than kapt
 }
 
 android {
@@ -63,6 +62,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    //Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -70,6 +71,19 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Added Unit Testing Libraries
+    testImplementation(libs.androidx.arch)
+    //Needed for Coroutine testing
+    testImplementation(libs.kotlinx.coroutines)
+    //Mockito
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.mockk)
+    //DaggerHilt Testing
+    androidTestImplementation(libs.dagger.hilt.testing)
+
 
     //KSP
     implementation(libs.kspProcessingApi)

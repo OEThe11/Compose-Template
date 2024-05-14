@@ -5,5 +5,4 @@ import dagger.hilt.android.HiltAndroidApp
 import retrofit2.http.HEAD
 
 @HiltAndroidApp
-class ComposeApplication: Application() {
-}
+class ComposeApplication: Application()
